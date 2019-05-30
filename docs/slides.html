@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>React Week - HETIC H3</title>
+    <link rel="stylesheet" href="./css/reveal.css" />
+    <link rel="stylesheet" href="./css/theme/solarized.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/zenburn.css" />
+    <link rel="stylesheet" href="./css/print/paper.css" type="text/css" media="print" />
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template">
+
+# React Week
+
+## HETIC - H3
+
+<aside class="notes"><p>transitions none/fade/slide/convex/concave/zoom</p>
+</aside></script></section><section  data-markdown><script type="text/template">
+## Folks
+
+- [Nicolas André](https://twitter.com/nclsndr) — UX Engineer at <a target="_blank" href="https://www.chance.co">Chance</a>
+- [Gabriel Vergnaud](https://twitter.com/gabrielvergnaud) — Software Engineer at <a target="_blank" href="https://sketchfab
+.com/">Sketchfab</a>
+</script></section><section  data-markdown><script type="text/template">
+## Environment setup
+
+<br>
+<p class="text-intro" style="text-align:left;">Make sure <strong>Node</strong> and 
+<strong>npm</strong> are installed
+ and
+  up to	date</p>
+<ul style="text-align:left; margin-left:0; width:80%;">
+  <li>NodeJS <a target="_blank" href="https://nodejs.org">website</a></li>
+  <li>NPM <a target="_blank" href="https://www.npmjs.com/">website</a></li>
+</ul>
+<br><br>
+
+```bash
+$ node -v -> must output >= v10.x
+$ npm -v ->  must output >= v6.4
+```
+</script></section><section  data-markdown><script type="text/template">
+# React basis
+<br>
+</script></section><section  data-markdown><script type="text/template">
+## React
+<h3 style="font-weight: normal;">A <strong>JavaScript</strong> library for building <strong>user 
+interfaces</strong></h3>
+</script></section><section  data-markdown><script type="text/template">
+## JS vs DOM
+
+```javascript
+const divElem = document​.create​Element('div');
+divElem.innerText = 'Hello World'
+document.appendChild(divElem);
+```
+
+[DOM API](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
+</script></section><section  data-markdown><script type="text/template">
+<iframe style="height:60vh; width:100vh" src="https://codesandbox.io/embed/domapi-jw61d?fontsize=14" title="dom-api" 
+style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+</script></section><section  data-markdown><script type="text/template">
+## Hello JSX
+
+```javascript
+const element = <h1>Hello, world!</h1>;
+```
+
+[Introducing JSX](https://reactjs.org/docs/introducing-jsx.html)
+</script></section><section  data-markdown><script type="text/template">
+<a target="_blank" href="https://babeljs
+.io/repl/#?presets=react&code_lz=DwEwlgbgBAxgNgQwM5IHIILYFMC8AiJACwHsAHUsAOwHMBaOMJAFzwD4AoKKYQgRlYDKJclWpQAMoyZQAZsQBOUAN6l5ZJADpKmLAF9gAej4cuwAK5wTXbg1YBJSswTV5mQ7c7XgtgOqEETEgAguTuYFamtgDyMBZmSGFWhhYchuAQrADc7EA">
+<img style="height: 100px;" src="assets/babel.png" alt="">
+</a>
+
+```javascript
+// From 
+const el = (<div className="shopping-list">
+  <h1>Shopping List</h1>
+  <ul>
+    <li>Instagram</li>
+    <li>WhatsApp</li>
+    <li>Oculus</li>
+  </ul>
+</div>
+);
+
+// To
+React.createElement('div',
+  { className: 'shopping-list' },
+  React.createElement('h1', null, 'Shopping List'),
+  React.createElement('ul', null,
+    React.createElement('li', null, 'Instagram'),
+    React.createElement('li', null, 'WhatsApp'),
+    React.createElement('li', null, 'Oculus')
+  )
+)
+
+```
+</script></section><section  data-markdown><script type="text/template">
+### Props
+
+```javascript
+
+function WelcomeMessage(props) {
+  return <h1>Welcome {props.name}</h1>;
+}
+
+function App() {
+  return (
+    <div>
+      <WelcomeMessage name="Sam" />
+      <WelcomeMessage name="Julie" />
+      <WelcomeMessage name="Thomas" />
+    </div>
+  );
+}
+```</script></section><section  data-markdown><script type="text/template">
+<iframe style="height:60vh; width:100vh" src="https://codesandbox.io/embed/inspiring-rgb-br9x6?fontsize=14" 
+title="introducing-jsx" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+</script></section><section  data-markdown><script type="text/template">
+## Manage local state
+</script></section><section  data-markdown><script type="text/template">
+### Class component
+
+```javascript
+
+class Counter extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { count: 0 };
+  }
+  onIncrement = () =>
+    this.setState(prevState => ({ count: prevState.count + 1 }));
+  onDecrement = () =>
+    this.setState(prevState => ({ count: prevState.count - 1 }));
+  render() {
+    const { count } = this.state;
+    return (
+      <div>
+        <button onClick={this.onIncrement}>Increment</button>
+        <p>{count}</p>
+        <button onClick={this.onDecrement}>Decrement</button>
+      </div>
+    );
+  }
+}
+```
+</script></section><section  data-markdown><script type="text/template">
+### With hooks
+
+```javascript
+
+const CounterWithHooks = () => {
+  const [count, setCount] = React.useState(0)
+
+  return (
+    <div>
+      <button onClick={() => setCount(p => p + 1)}>Increment</button>
+      <button onClick={() => setCount(p => p - 1)}>Decrement</button>
+    </div>
+  )
+}
+```
+</script></section><section  data-markdown><script type="text/template">
+<iframe style="height:60vh; width:100vh" src="https://codesandbox.io/embed/xenodochial-clarke-6t17r?fontsize=14" 
+title="react-local-state" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+</script></section><section  data-markdown><script type="text/template">
+
+<iframe style="height:60vh; width:100vh" src="https://codesandbox
+.io/embed/reacth3domtoreact-9jsyq?fontsize=14"
+										title="react-h3-dom-to-react" style="width:100%; height:100%; border:0;
+									border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+</script></section><section  data-markdown><script type="text/template">
+## React ❤️ CSS
+</script></section><section  data-markdown><script type="text/template">
+### SASS, LESS, CSS Modules, CSS in JS...
+<br><br>
+
+[Create react app Styles docs](https://facebook.github.io/create-react-app/docs/adding-a-stylesheet)
+</script></section><section  data-markdown><script type="text/template">
+<iframe style="height:60vh; width:100vh" src="https://codesandbox.io/embed/upbeat-shape-lupf3?fontsize=14" title="css-in-react" 
+style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+</script></section><section  data-markdown><script type="text/template"></script></section><section  data-markdown><script type="text/template">
+# That's all folks
+
+### Thank you
+</script></section><section  data-markdown><script type="text/template"></script></section></div>
+    </div>
+
+    <script src="./lib/js/head.min.js"></script>
+    <script src="./js/reveal.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // Optional libraries used to extend on reveal.js
+      var deps = [
+        { src: './lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: './plugin/markdown/marked.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+        { src: './plugin/markdown/markdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+        { src: './plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: './plugin/zoom-js/zoom.js', async: true },
+        { src: './plugin/notes/notes.js', async: true },
+        { src: './plugin/math/math.js', async: true }
+      ];
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        dependencies: deps
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal.getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"transition":"slide","transitionSpeed":"fast"}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>

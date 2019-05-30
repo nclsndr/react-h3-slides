@@ -1,15 +1,3 @@
-# Test
+# React week
 
----
-
-# Second
-
-```
-
-  const me = test
-  function getName(id){
-   
-  }
-
-//-
-```
+## HETIC H3 - slides
