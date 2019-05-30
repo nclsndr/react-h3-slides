@@ -1,0 +1,14 @@
+{
+  "name": "h3-react-slides",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "reveal-md": "^3.0.4"
+  },
+  "scripts": {
+    "build": "reveal-md README.md --theme solarized --static docs --static-dirs=assets",
+    "start": "reveal-md README.md --theme solarized -w"
+  },
+  "keywords": [],
+  "description": ""
+}
