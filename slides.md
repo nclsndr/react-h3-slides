@@ -71,7 +71,7 @@ style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
 
 ---
 
-## Hello JSX
+### Hello JSX
 
 ```javascript
 const element = <h1>Hello, world!</h1>;
@@ -205,7 +205,7 @@ title="react-local-state" style="width:100%; height:500px; border:0; border-radi
 
 ---
 
-### SASS, LESS, CSS Modules, CSS in JS...
+### raw, SASS, CSS Modules, CSS in JS...
 <br><br>
 
 [Create react app Styles docs](https://facebook.github.io/create-react-app/docs/adding-a-stylesheet)
@@ -217,10 +217,31 @@ style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
 
 ---
 
+## Static module bundlers
+
+- Webpack — [website](https://webpack.js.org/)
+- Parcel — [website](https://parceljs.org/)
+
+---
+
+## An now 🥁
+
+---
+
+## Challenge of the week:
+
+### Code a Notion like app
+
+<a target="_blank" href="https://www.notion.so/product">
+<img style="height: 100px;" src="assets/notion.png" alt="">
+</a>
+
+---
+
+---
+
 ---
 
 # That's all folks
 
 ### Thank you
-
----
