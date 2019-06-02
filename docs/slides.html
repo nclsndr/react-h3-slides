@@ -15,17 +15,184 @@
     <div class="reveal">
       <div class="slides"><section  data-markdown><script type="text/template">
 
-# React Week
+# Semaine React
 
 ## HETIC - H3
 
-<aside class="notes"><p>transitions none/fade/slide/convex/concave/zoom</p>
-</aside></script></section><section  data-markdown><script type="text/template">
+<a target="_blank" style="font-size: 24px; margin-top: 80px; display: block;" 
+   href="https://nclsndr.github.io/react-h3-slides/#/">nclsndr.github
+  .io/react-h3-slides</a>
+</script></section><section  data-markdown><script type="text/template">
 ## Folks
 
 - [Nicolas André](https://twitter.com/nclsndr) — UX Engineer at <a target="_blank" href="https://www.chance.co">Chance</a>
-- [Gabriel Vergnaud](https://twitter.com/gabrielvergnaud) — Software Engineer at <a target="_blank" href="https://sketchfab
-.com/">Sketchfab</a>
+- [Gabriel Vergnaud](https://twitter.com/gabrielvergnaud) — Frontend Engineer at <a target="_blank" href="https://sketchfab.com/">Sketchfab</a>
+</script></section><section  data-markdown><script type="text/template">
+## Et vous?
+
+<aside class="notes"><p>technologies, JS level?</p>
+</aside></script></section><section  data-markdown><script type="text/template">
+## Programme de la semaine
+
+<div style="display:flex; flex-direction: column; align-items: flex-start; width: 600px; margin: 0 auto;">
+  <p style="font-size: 22px; margin-top: 30px; margin-bottom: 0;">Lundi</p>
+  <p style="font-size: 26px; margin: 0; margin-left: 30px; text-align:left;">DOM API, React Basis, 
+  local state, DOM refs</p>
+  <p style="font-size: 22px; margin-top: 30px; margin-bottom: 0;">Mardi</p>
+  <p style="font-size: 26px; margin: 0; margin-left: 30px; text-align:left;">Fonctions pure et side 
+  effects, 
+  State 
+  reducer, 
+  useEffect</p>
+  <p style="font-size: 22px; margin-top: 30px; margin-bottom: 0;">Mercredi</p>
+  <p style="font-size: 26px; margin: 0; margin-left: 30px; text-align:left;">Dealing with network, 
+  HTTP, 
+  Auth, CSS with React</p>
+  <p style="font-size: 22px; margin-top: 30px; margin-bottom: 0;">Jeudi</p>
+  <p style="font-size: 26px; margin: 0; margin-left: 30px; text-align:left;">UseRef Advanced, UI 
+  animations</p>
+  <p style="font-size: 22px; margin-top: 30px; margin-bottom: 0;">Vendredi</p>
+  <p style="font-size: 26px; margin: 0; margin-left: 30px; text-align:left;">Functional 
+  programming</p>
+</div>
+</script></section><section  data-markdown><script type="text/template">
+Organisation des journées
+
+<div style="display: flex; flex-direction: row; margin: auto; width: 600px; justify-content: space-around">
+  <div>
+    <h3>Matin</h3>
+    <p>Cours</p>
+  </div>
+  <div>
+    <h3>Après-midi</h3>
+    <p>Projet</p>
+  </div>
+</div>
+</script></section><section  data-markdown><script type="text/template">
+<h1 style="color: #FFF;">Ready?</h1>
+
+<!-- .slide: data-background="assets/ready.gif" -->
+</script></section><section  data-markdown><script type="text/template">
+# React
+<h3 style="font-weight: lighter; text-transform: none;">
+A JavaScript library for building user interfaces</h3></script></section><section  data-markdown><script type="text/template">
+## Javascript? 🧐
+</script></section><section  data-markdown><script type="text/template">
+## Javascript
+
+<p style="font-size: 24px; text-align: left; width: 100vh; max-width: 800px; margin: auto;
+line-height: 32px;">
+  JavaScript, often abbreviated as JS, is a high-level, interpreted programming language that
+  conforms to the ECMAScript specification.[...] <br><br>
+  Alongside HTML and CSS, JavaScript is one of the core technologies of the World Wide Web. 
+  JavaScript enables interactive web pages and is an essential part of web applications. The vast
+  majority of websites use it, and major web browsers have a dedicated JavaScript engine to 
+  execute it. — <a href="https://en.wikipedia.org/wiki/JavaScript">Wikipedia</a> <br><br>
+  Brendan Eich - A Brief History of JavaScript — <a href="https://www.youtube
+    .com/watch?v=aX3ZABCdC38">YouTube</a>
+</p>
+
+<aside class="notes"><p>Sun Microsystem / Netscape vs Microsoft</p>
+</aside></script></section><section  data-markdown><script type="text/template">
+## User interface? 🧐
+</script></section><section  data-markdown><script type="text/template">
+## User interface
+
+<p style="font-size: 24px; text-align: left; width: 100vh; max-width: 800px; margin: auto;
+line-height: 32px;">
+  The user interface (UI), in the industrial design field of human–computer interaction, is the space where interactions between humans and machines occur. — <a href="https://en.wikipedia.org/wiki/User_interfacet">Wikipedia</a>
+</p>
+</script></section><section  data-markdown><script type="text/template">
+## 🌍 💻
+
+
+Ok, mais pourquoi React?
+</script></section><section  data-markdown><script type="text/template">
+<div>
+  <img src="assets/fb5.jpg">
+</div>
+</script></section><section  data-markdown><script type="text/template">
+<h2 style="color: #FFF;">Defocus — le web</h2>
+
+<!-- .slide: data-background="assets/defocus.gif" -->
+</script></section><section  data-markdown><script type="text/template">
+<!-- .slide: data-background="assets/the-web.jpg" -->
+</script></section><section  data-markdown><script type="text/template">
+### Historiquement
+
+<div>
+  <img src="assets/old-infra.jpg">
+</div>
+</script></section><section  data-markdown><script type="text/template">
+### Avantage
+
+- Pas de logique complexe en front-end
+
+<br>
+
+### Problèmes
+
+- Une seule interaction réseau par chargement
+- Requêtes lourdes à traiter coté serveur
+- Difficulté d'afficher des interfaces denses
+</script></section><section  data-markdown><script type="text/template">
+<div>
+  <img src="assets/new-infra.jpg">
+</div>
+</script></section><section  data-markdown><script type="text/template">
+### Avantage
+
+- Interfaces riches et fluident
+- Charge serveur réduite
+
+<br>
+
+### Problèmes
+
+- Complexité de la logique sur le client front-end
+</script></section><section  data-markdown><script type="text/template">
+<div>
+  <h4 style="margin: 0">Twitter 2007</h4>
+  <img style="height: 50vh" src="assets/t-2007.jpg">
+  <a style="font-size: 1rem; display: block;" target="_blank" 
+      href="http://web.archive.org/web/20070302084548/http://twitter.com/jack/all_updates">webarchive</a>
+</div>
+</script></section><section  data-markdown><script type="text/template">
+<div>
+  <h4 style="margin: 0">Twitter 2009</h4>
+  <img style="height: 50vh" src="assets/t-2009.jpg">
+  <a style="font-size: 1rem; display: block;" target="_blank" 
+      href="http://web.archive.org/web/20090918000830/https://twitter.com/jack">webarchive</a>
+</div>
+</script></section><section  data-markdown><script type="text/template">
+<div>
+  <h4 style="margin: 0">Twitter 2011</h4>
+  <img style="height: 50vh" src="assets/t-2011.jpg">
+  <a style="font-size: 1rem; display: block;" target="_blank" 
+      href="http://web.archive.org/web/20111212082522/https://twitter.com/jack">webarchive</a>
+</div>
+</script></section><section  data-markdown><script type="text/template">
+<div>
+  <h4 style="margin: 0">Twitter 2014</h4>
+  <img style="height: 50vh" src="assets/t-2014.jpg">
+  <a style="font-size: 1rem; display: block;" target="_blank" 
+      href="http://web.archive.org/web/20141008141738/https://twitter.com/jack">webarchive</a>
+</div>
+</script></section><section  data-markdown><script type="text/template">
+<div>
+  <h4 style="margin: 0">Twitter 2019</h4>
+  <img style="height: 50vh" src="assets/t-2019.jpg">
+  <a style="font-size: 1rem; display: block;" target="_blank" 
+      href="http://web.archive.org/web/20190501220121/https:/twitter.com/jack">webarchive</a>
+</div>
+</script></section><section  data-markdown><script type="text/template">
+<h2 style="color: #FFF;">Defocus <br><code>end</code></h2>
+
+<!-- .slide: data-background="assets/focus.gif" -->
+</script></section><section  data-markdown><script type="text/template">
+# Javascript
+
+Fondamentaux
 </script></section><section  data-markdown><script type="text/template">
 ## Environment setup
 
@@ -45,27 +212,86 @@ $ node -v -> must output >= v10.x
 $ npm -v ->  must output >= v6.4
 ```
 </script></section><section  data-markdown><script type="text/template">
-# React basis
-<br>
+## JS DOM API
+
+[MDN docs](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
 </script></section><section  data-markdown><script type="text/template">
-## React
-<h3 style="font-weight: normal;">A <strong>JavaScript</strong> library for building <strong>user 
-interfaces</strong></h3>
-</script></section><section  data-markdown><script type="text/template">
-## JS vs DOM
+Create HTML elements
 
 ```javascript
 const divElem = document​.create​Element('div');
 divElem.innerText = 'Hello World'
 document.appendChild(divElem);
 ```
+</script></section><section  data-markdown><script type="text/template">
+Manage events
 
-[DOM API](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
+```javascript
+const divElem = document​.getElementById('myButton');
+divElem.addEventListener('click', () => {
+  // do things...
+})
+```
 </script></section><section  data-markdown><script type="text/template">
 <iframe style="height:60vh; width:100vh" src="https://codesandbox.io/embed/domapi-jw61d?fontsize=14" title="dom-api" 
 style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 </script></section><section  data-markdown><script type="text/template">
-### Hello JSX
+# React basis
+<br>
+<!-- .slide: data-background="assets/react-bg.jpg" -->
+</script></section><section  data-markdown><script type="text/template">
+## User Interface
+
+### Think in React
+</script></section><section  data-markdown><script type="text/template">
+<div>
+  <img src="assets/think-in-react-init.jpg">
+</div>
+</script></section><section  data-markdown><script type="text/template">
+<div>
+  <img src="assets/think-in-react-list.jpg">
+</div>
+</script></section><section  data-markdown><script type="text/template">
+Abstrait
+
+```javascript
+issues
+  issue.title
+  issue.author
+    author.username
+    author.avatarUrl
+  issue.comments.count
+```
+</script></section><section  data-markdown><script type="text/template">
+Concret
+
+```html
+<div class="issue">
+  <div class="left">
+    <span class="icon icon_status">
+  </div>
+  <div class="center">
+    <h4 class="title">Issue title</h4>
+    <p class="info">#IssueNumber dateFrom authorName</p>
+  </div>
+  <div class="right">
+    <button class="commentCount">#Comments</button>
+  </div>
+</div>
+```
+</script></section><section  data-markdown><script type="text/template">
+Soit, pour la liste
+
+```html
+<div class="issues">
+  <div class="issue"><!-- ... --></div>  
+  <div class="issue"><!-- ... --></div>  
+  <div class="issue"><!-- ... --></div>  
+  <div class="issue"><!-- ... --></div>  
+</div>
+```
+</script></section><section  data-markdown><script type="text/template">
+## Hello JSX
 
 ```javascript
 const element = <h1>Hello, world!</h1>;
@@ -80,53 +306,127 @@ const element = <h1>Hello, world!</h1>;
 
 ```javascript
 // From 
-const el = (<div className="shopping-list">
-  <h1>Shopping List</h1>
-  <ul>
-    <li>Instagram</li>
-    <li>WhatsApp</li>
-    <li>Oculus</li>
-  </ul>
-</div>
-);
+const el = (
+<div className="user">
+  <p>Tom</p>
+</div>)
 
 // To
-React.createElement('div',
-  { className: 'shopping-list' },
-  React.createElement('h1', null, 'Shopping List'),
-  React.createElement('ul', null,
-    React.createElement('li', null, 'Instagram'),
-    React.createElement('li', null, 'WhatsApp'),
-    React.createElement('li', null, 'Oculus')
-  )
-)
+React.createElement("div", {
+  className: "user"
+}, React.createElement("p", null, "Tom"));
 
 ```
 </script></section><section  data-markdown><script type="text/template">
-### Props
+## React Components
+</script></section><section  data-markdown><script type="text/template">
+Un component React est avant tout une fonction
 
 ```javascript
+const Issue = () => (
+  <div className="issue">
+    <!-- ... -->
+  </div>
+)
+```
+</script></section><section  data-markdown><script type="text/template">
+#### Et les classes alors?
 
-function WelcomeMessage(props) {
-  return <h1>Welcome {props.name}</h1>;
-}
+<p style="font-size: 24px">(on y revient)</p>
+</script></section><section  data-markdown><script type="text/template">
+### Props
 
-function App() {
+Les props permettent de connecter un composant parent à ses enfants
+
+<br>
+
+1. par la transmission de données parent > enfant
+2. et par le passage de références de fonctions callback 
+</script></section><section  data-markdown><script type="text/template">
+La valeur de title est portée par `props.title`
+
+```javascript
+const Issue = (props) => {
   return (
-    <div>
-      <WelcomeMessage name="Sam" />
-      <WelcomeMessage name="Julie" />
-      <WelcomeMessage name="Thomas" />
+    <div className="issue">
+      <!-- ... -->
+        <h4 className="title">{props.title}</h4>
+     <!-- ... -->
     </div>
   );
 }
+const App = () => (
+  <div>
+    <Issue title="Issue title" />
+  </div>
+)
 ```</script></section><section  data-markdown><script type="text/template">
+La fonction de callback `onClick` est héritée de `App`
+
+```javascript
+const Issue = (props) => {
+  return (
+    <div className="issue" onClick={props.onRowClick}>
+      <!-- ... -->
+    </div>
+  );
+}
+const App = () => {
+  const handleClick = e => { /* do things */ }
+  return (
+    <div>
+        <Issue onRowClick={handleClick} />
+      </div>
+  )
+}
+```
+</script></section><section  data-markdown><script type="text/template">
+### Data Flow
+
+En react le data flow est unidirectionnel
+
+composant parent → composants enfants
+
+data down, events up
+</script></section><section  data-markdown><script type="text/template">
 <iframe style="height:60vh; width:100vh" src="https://codesandbox.io/embed/inspiring-rgb-br9x6?fontsize=14" 
 title="introducing-jsx" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 </script></section><section  data-markdown><script type="text/template">
-## Manage local state
+## 🤷‍♀️
+
+Ok, mais je fais comment pour update une valeur?
 </script></section><section  data-markdown><script type="text/template">
-### Class component
+## Local state
+</script></section><section  data-markdown><script type="text/template">
+![react tree update](assets/react-tree-update.png)
+
+Chaque composant peut contenir un **state**
+</script></section><section  data-markdown><script type="text/template">
+### le state
+
+La **data** définit l'interface
+
+Quand le state **update**, l'interface **update**
+</script></section><section  data-markdown><script type="text/template">
+<div style="display: flex; flex-direction: row; justify-content: space-around;">
+  <img style="width: 40%; height: auto; display: block" class="simple-image" src="assets/todo-state.png" 
+  style="flex: 1;
+  max-width: 45vw;" />
+  <img style="width: 40%; height: auto; display: block" src="assets/todo-app.png" style="flex: 1; 
+  max-width: 
+  45vw;" />
+</div>
+</script></section><section  data-markdown><script type="text/template">
+`view = f(state)`
+
+plus besoin d'update la view.
+
+Il suffit d'update le state
+</script></section><section  data-markdown><script type="text/template">
+<iframe style="height:60vh; width:100vh" src="https://codesandbox.io/embed/xenodochial-clarke-6t17r?fontsize=14" 
+title="react-local-state" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+</script></section><section  data-markdown><script type="text/template">
+### Classe
 
 ```javascript
 
@@ -152,7 +452,7 @@ class Counter extends React.Component {
 }
 ```
 </script></section><section  data-markdown><script type="text/template">
-### With hooks
+### `UseState` hook
 
 ```javascript
 
@@ -168,14 +468,27 @@ const CounterWithHooks = () => {
 }
 ```
 </script></section><section  data-markdown><script type="text/template">
-<iframe style="height:60vh; width:100vh" src="https://codesandbox.io/embed/xenodochial-clarke-6t17r?fontsize=14" 
-title="react-local-state" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
-</script></section><section  data-markdown><script type="text/template">
-
 <iframe style="height:60vh; width:100vh" src="https://codesandbox
 .io/embed/reacth3domtoreact-9jsyq?fontsize=14"
 										title="react-h3-dom-to-react" style="width:100%; height:100%; border:0;
 									border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+</script></section><section  data-markdown><script type="text/template">
+## An now 🥁
+</script></section><section  data-markdown><script type="text/template">
+## Challenge of the week:
+
+### Code a Notion like app
+
+<a target="_blank" href="https://www.notion.so/product">
+<img style="height: 100px;" src="assets/notion.png" alt="">
+</a>
+</script></section><section  data-markdown><script type="text/template">
+<iframe style="height:60vh; width:100vh" src="https://codesandbox.io/embed/notionv2withstudents-oijfx?fontsize=14" 
+title="notion-v2-with-students" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+</script></section><section  data-markdown><script type="text/template">
+# That's all folks
+
+### Thank you
 </script></section><section  data-markdown><script type="text/template">
 ## React ❤️ CSS
 </script></section><section  data-markdown><script type="text/template">
@@ -191,21 +504,34 @@ style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
 
 - Webpack — [website](https://webpack.js.org/)
 - Parcel — [website](https://parceljs.org/)
-</script></section><section  data-markdown><script type="text/template">
-## An now 🥁
-</script></section><section  data-markdown><script type="text/template">
-## Challenge of the week:
+</script></section><section  data-markdown><script type="text/template"></script></section><section  data-markdown><script type="text/template">
+<h2 style="color: #FFF;">Une petite histoire du web</h2>
 
-### Code a Notion like app
+<!-- .slide: data-background="assets/rewind.gif" -->
 
-<a target="_blank" href="https://www.notion.so/product">
-<img style="height: 100px;" src="assets/notion.png" alt="">
-</a>
-</script></section><section  data-markdown><script type="text/template"></script></section><section  data-markdown><script type="text/template"></script></section><section  data-markdown><script type="text/template">
-# That's all folks
 
-### Thank you
-</script></section></div>
+
+<style>
+ .reveal pre {
+    border-radius: 5px;
+    box-shadow: 0px 8px 25px rgba(0,0,0,.25);
+  }
+
+  .reveal section img {
+    border: none;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15)
+  }
+
+  .reveal pre code {
+    padding: 30px;
+    border-radius: 5px;
+    font-weight: normal;
+  }
+
+  .reveal code {
+    font-weight: bold;
+  }
+</style></script></section></div>
     </div>
 
     <script src="./lib/js/head.min.js"></script>
