@@ -600,13 +600,255 @@ title="notion-v2-with-students" style="width:100%; height:500px; border:0; borde
 
 ---
 
-# That's all folks
-
-### Thank you
+# ⏱
 
 ---
 
-## React ❤️ CSS
+# Semaine React
+
+## HETIC - H3
+
+<a target="_blank" style="font-size: 24px; margin-top: 80px; display: block;" 
+   href="https://nclsndr.github.io/react-h3-slides/#/62">nclsndr.github
+  .io/react-h3-slides</a>
+
+---
+
+# 📡 🌍
+
+## Dealing with the network
+
+---
+
+## HTTP
+
+HyperText Transfer Protocol
+
+Note: wiki —
+HTTP a été inventé par Tim Berners-Lee avec les adresses Web et le langage HTML pour créer le World Wide Web. À cette époque, le File Transfer Protocol (FTP) était déjà disponible pour transférer des fichiers, mais il ne supportait pas la notion de format de données telle qu'introduite par Multipurpose Internet Mail Extensions (MIME). La première version de HTTP était très élémentaire, mais prévoyait déjà le support d'en-têtes MIME pour décrire les données transmises. Cette première version reste encore partiellement utilisable de nos jours, connue sous le nom de HTTP/0.9.
+
+En mai 1996, HTTP/1.0 voit le jour et est décrit dans la RFC 19451. Cette version supporte les serveurs HTTP virtuels, la gestion de cache et l'identification.
+
+En janvier 1997, HTTP/1.1 devient finalement standard de l'IETF. Il est décrit dans la RFC 20682 de l'IETF, puis dans la RFC 26163 en juin 1999. Cette version ajoute le support du transfert en pipeline (ou pipelinage) et la négociation de type de contenu (format de données, langue).
+
+En mars 2012, les travaux à propos de HTTP/2.0 démarrent à l'IETF adoptant SPDY comme matériel de départ.
+
+En février 2014, la spécification de HTTP 1.1 a été republiée. Elle a été éclatée en plusieurs RFC et corrigée pour toutes ses imprécisions, RFC 72304 à RFC 72375.
+
+---
+
+On a vu précédemment
+
+<div>
+  <img src="assets/new-infra.jpg">
+</div>
+
+---
+
+En regardant de plus près: Client <> API
+
+<div>
+  <img src="assets/http_protocol.jpg">
+</div>
+
+---
+
+### 1. Verbs
+
+```bash
+ HEAD
+ OPTIONS
+ ---
+ GET
+ POST
+ PUT
+ PATCH
+ DELETE
+ ---
+ TRACE
+ CONNECT
+```
+
+Note: Who can tell which do what?
+
+---
+
+### 2. Headers
+
+<br>
+
+Transport de meta-données sur la couche HTTP
+
+Représentés sous la forme
+
+`key<string>: value<string>`
+
+---
+
+### Content-Type
+
+```bash
+  Content-Type: application/json
+```
+
+Indique le type de contenu échangé
+
+<a target="_blank" style="display: block;font-size: .8em;margin: 30px 0;" href="https://developer
+.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Complete_list_of_MIME_types">
+Docs</a>
+
+---
+
+### CORS
+
+<p style="font-size: .6em;">Cross-Origin Resource Sharing</p>
+
+```bash
+  Access-Control-Allow-Origin: * ??
+```
+
+En XHR, le serveur doit valider la provenance du client
+
+<a target="_blank" style="display: block;font-size: .8em;margin: 30px 0;" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">
+Docs</a>
+
+---
+
+### Preflight request
+ 
+ ```bash
+   OPTIONS /resource
+      Access-Control-Allow-Origin
+      Access-Control-Request-Method
+      Access-Control-Request-Headers
+ ```
+
+Permet au client de s'assurer de l'authorisation serveur
+
+(sur requêtes CORS uniquement)
+
+<a target="_blank" style="display: block;font-size: .8em;margin: 30px 0;" href="https://developer.mozilla.org/en-US/docs/Glossary/Preflight_request">
+Docs</a>
+
+---
+
+### Authorization
+
+```bash
+  Authorization: reqToken
+```
+
+Transporte le token d'authentification
+
+<a target="_blank" style="display: block;font-size: .8em;margin: 30px 0;" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization">
+Docs</a>
+
+---
+
+Request headers (exemple)
+
+```bash
+Accept: application/json
+Content-Type: application/json
+Authorization: [Token]
+Origin: https://my-api.com
+Referer: https://any/users/4
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10)...
+```
+
+---
+
+Response headers (exemple)
+
+```bash
+Access-Control-Allow-Origin: https://my-api.com
+Access-Control-Expose-Headers: Authorization
+Authorization: [Token]
+Connection: keep-alive
+Content-Length: 374
+Content-Type: application/json; charset=utf-8
+Date: Tue, 03 Jun 2019 18:44:36 GMT
+```
+
+---
+
+# 👨‍🔧
+
+## Data Architectures
+
+---
+
+### REST
+
+```bash
+  GET — Lire
+  POST — Créer
+  PUT/PATCH — Update
+  DELETE — Supprimer
+```
+
+<a target="_blank" style="display: block;font-size: .8em;margin: 30px 0;" href="https://hackernoon.com/restful-api-design-step-by-step-guide-2f2c9f9fcdbf">
+Article</a>
+
+---
+
+### GraphQL
+
+```graphql
+  type Query {
+    me: User
+  }
+  
+  type User {
+    id: ID
+    name: String
+  }
+```
+
+<a target="_blank" style="display: block;font-size: .8em;margin: 30px 0;" href="https://graphql.org/learn/">
+Docs</a>
+
+---
+
+<iframe style="height:30vh; width:100vh" src="https://codesandbox
+.io/embed/fetchdata-8b9g9?fontsize=14" title="fetch-data" 
+allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+
+<iframe style="height:30vh; width:100vh" src="https://codesandbox
+.io/embed/nodesandbox-ixpxl?expanddevtools=1&fontsize=14&view
+=preview" title="react-h3-backend-sandbox" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+
+---
+
+# 🔒 ⚙️
+
+## Authentication flow
+
+---
+
+<div>
+  <img src="assets/auth.jpg">
+</div>
+
+---
+
+# 🧐️
+
+## JWT?
+
+---
+
+<iframe style="height:30vh; width:100vh" src="https://codesandbox
+.io/embed/fetchdata-8b9g9?fontsize=14" title="fetch-data" 
+allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+
+<iframe style="height:30vh; width:100vh" src="https://codesandbox
+.io/embed/nodesandbox-ixpxl?expanddevtools=1&fontsize=14&view
+=preview" title="react-h3-backend-sandbox" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+
+---
+
+# React ❤️ CSS
 
 ---
 
@@ -629,13 +871,16 @@ style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
 
 ---
 
+## 🎁
+
+### GIPHY browser
+
 ---
 
-<h2 style="color: #FFF;">Une petite histoire du web</h2>
+<iframe style="height:60vh; width:100vh" src="https://codesandbox
+.io/embed/beautiful-wescoff-hvb66?fontsize=14" title="react-h3-giphy" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 
-<!-- .slide: data-background="assets/rewind.gif" -->
-
-
+---
 
 <style>
  .reveal pre {
