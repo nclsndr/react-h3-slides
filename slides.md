@@ -852,7 +852,7 @@ allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; paym
 
 ---
 
-### raw, SASS, CSS Modules, CSS in JS...
+### raw, CSS Modules, CSS in JS...
 <br><br>
 
 [Create react app Styles docs](https://facebook.github.io/create-react-app/docs/adding-a-stylesheet)
@@ -881,6 +881,33 @@ style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
 .io/embed/beautiful-wescoff-hvb66?fontsize=14" title="react-h3-giphy" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 
 ---
+
+# GraphQL
+
+---
+
+Client
+
+<iframe style="height:60vh; width:100vh" src="https://codesandbox.io/embed/react-h3-graphql-client-y1hyg?fontsize=14" 
+title="react-h3-graphQL-client" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+
+---
+
+Server
+<iframe style="height:60vh; width:100vh" src="https://codesandbox.io/embed/react-h3-graphql-server-i95wl?fontsize=14" title="react-h3-graphQL-server" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+
+---
+
+## Ressources
+
+[Liens](https://www.notion.so/nclsndr/Ressources-Semaine-Perfectionnement-H3-ReactJS
+-f803acf606fb4470b14fca66b92e7ca5)
+
+---
+
+## That's all folks
+
+Thank you
 
 <style>
  .reveal pre {
